@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual | How to use NetPulse</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="subpage">
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i data-lucide="pulse" class="pulse-icon"></i>
+                <span>NetPulse</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="docs.html">Docs</a>
+                <a href="manual.html" class="active">Manual</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="download.html" class="btn btn-primary btn-sm">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <span class="badge">OPERATIONAL GUIDE</span>
+            <h1>Operational <span class="text-gradient">Manual</span></h1>
+            <p>Master the reconnaissance workflow with NetPulse.</p>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="manual-grid">
+                <div class="manual-nav">
+                    <div class="sticky-nav">
+                        <h4>Sections</h4>
+                        <a href="#setup">Setup</a>
+                        <a href="#scanning">Scanning</a>
+                        <a href="#reporting">Reporting</a>
+                        <a href="#performance">Performance</a>
+                    </div>
+                </div>
+                <div class="manual-content">
+                    <div id="setup" class="manual-step">
+                        <h2>1. Initial Setup</h2>
+                        <p>Launch the NetPulse application. The first time you run it, a <code>history.json</code> file will be created in your root directory to store your audit logs.</p>
+                        <div class="code-block">
+                            ./NetPulse.exe --init
+                        </div>
+                    </div>
+
+                    <div id="scanning" class="manual-step">
+                        <h2>2. Targeted Scanning</h2>
+                        <p>Navigate to the <strong>IP Scanner</strong> tab. You can enter single IPs, ranges (e.g. 192.168.1.1-50), or CIDR blocks (e.g. 10.0.0.0/24).</p>
+                        <p>Once targets are set, go to <strong>Port Scanner</strong> and select your desired profiles or individual ports.</p>
+                    </div>
+
+                    <div id="reporting" class="manual-step">
+                        <h2>3. Professional Reporting</h2>
+                        <p>After a scan completes, head to the <strong>Reports</strong> page. Here you can filter by port number (e.g. '22') or status ('Open') and preview the report before exporting to CSV or JSON.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i data-lucide="pulse"></i>
+                <span>NetPulse</span>
+            </div>
+            <p>&copy; 2026 Crooksec. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

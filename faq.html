@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Frequently Asked Questions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="subpage">
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i data-lucide="pulse" class="pulse-icon"></i>
+                <span>NetPulse</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="docs.html">Docs</a>
+                <a href="manual.html">Manual</a>
+                <a href="faq.html" class="active">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="download.html" class="btn btn-primary btn-sm">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <span class="badge">HELP CENTER</span>
+            <h1>Common <span class="text-gradient">Questions</span></h1>
+            <p>Everything you need to know about the NetPulse engine.</p>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container small-container">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is NetPulse free to use?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, the core NetPulse reconnaissance suite is free for independent security researchers and community use.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What operating systems are supported?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, NetPulse is optimized for Windows 10/11. Linux and MacOS versions are in the development roadmap for late 2026.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does OS Fingerprinting work?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>NetPulse analyzes the Time-To-Live (TTL) values from target responses. Since different operating systems (Linux, Windows, Cisco) use distinct default TTLs, we can guess the OS with high accuracy.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is it safe to run 200 threads?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, but it depends on your network stability. High thread counts can trigger IDS/IPS systems or overload low-end routers. We recommend starting at 50 threads and scaling up.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i data-lucide="pulse"></i>
+                <span>NetPulse</span>
+            </div>
+            <p>&copy; 2026 Crooksec. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Technical Reference</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="subpage">
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i data-lucide="pulse" class="pulse-icon"></i>
+                <span>NetPulse</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="docs.html" class="active">Docs</a>
+                <a href="manual.html">Manual</a>
+                <a href="faq.html">FAQ</a>
+                <a href="about.html">About</a>
+                <a href="download.html" class="btn btn-primary btn-sm">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <span class="badge">TECHNICAL REFERENCE</span>
+            <h1>Technical <span class="text-gradient">Docs</span></h1>
+            <p>Deep dive into the NetPulse architecture and socket engine.</p>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="docs-layout">
+                <div class="docs-sidebar">
+                    <h3>Architecture</h3>
+                    <a href="#core">Scanner Core</a>
+                    <a href="#storage">Persistence</a>
+                    <a href="#networking">Networking</a>
+                </div>
+                <div class="docs-body">
+                    <div id="core" class="doc-section">
+                        <h2>Scanner Core</h2>
+                        <p>The core scanning logic utilizes <code>System.Net.Sockets</code> to perform asynchronous connection attempts. Unlike standard sequential scanners, NetPulse uses a Semaphore-based throttling mechanism to manage concurrent tasks.</p>
+                        <div class="code-block">
+                            var semaphore = new SemaphoreSlim(maxParallel);
+                            await semaphore.WaitAsync(ct);
+                        </div>
+                    </div>
+
+                    <div id="storage" class="doc-section">
+                        <h2>Persistence</h2>
+                        <p>Data is stored in a flat JSON structure for portability. The <code>history.json</code> schema captures session metadata, results, and target summaries.</p>
+                    </div>
+
+                    <div id="networking" class="doc-section">
+                        <h2>Networking Strategy</h2>
+                        <p>NetPulse uses a 'Full-Open' TCP handshake strategy for accuracy. Future updates will include 'Half-Open' SYN scanning for increased stealth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i data-lucide="pulse"></i>
+                <span>NetPulse</span>
+            </div>
+            <p>&copy; 2026 Crooksec. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
